@@ -12,13 +12,12 @@
   @include darwin {
     height: var(--darwin-title-bar-height);
     background: linear-gradient(to bottom, #3b3f46 0%, #2b2e33 100%);
-    border-bottom: 1px solid #000;
+    border-bottom: 5px solid #fff;
   }
 
   @include win32 {
     height: var(--win32-title-bar-height);
-    background: var(--win32-title-bar-background-color);
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #242424;
 
     .app-icon {
       color: var(--toolbar-button-secondary-color);

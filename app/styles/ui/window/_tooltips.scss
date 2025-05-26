@@ -19,7 +19,6 @@ body > .tooltip,
   border-radius: var(--border-radius);
   padding: var(--spacing-half) var(--spacing);
   font-size: var(--font-size);
-  box-shadow: 0 8px 24px var(--tooltip-shadow-color);
 
   .tooltip-content {
     overflow: auto;
@@ -214,7 +213,6 @@ body > .tooltip,
 
   &.window-controls-tooltip {
     background-color: var(--toolbar-tooltip-background-color);
-    box-shadow: 0 8px 24px var(--toolbar-tooltip-shadow-color);
 
     &::before {
       border-bottom-color: var(--toolbar-tooltip-background-color);

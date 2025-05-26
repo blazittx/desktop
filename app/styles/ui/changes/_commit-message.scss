@@ -171,7 +171,6 @@
     &.focus-within {
       outline: none;
       border-color: var(--focus-color);
-      box-shadow: 0 0 0 1px var(--text-field-focus-shadow-color);
     }
 
     .description-field.with-overflow {

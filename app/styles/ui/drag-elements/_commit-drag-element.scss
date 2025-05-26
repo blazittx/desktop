@@ -7,7 +7,6 @@
   padding: 0;
 
   .commit-box {
-    box-shadow: 2px 1px 1px 0px var(--box-border-color);
     border-top: 1px solid var(--box-border-color);
     border-left: 1px solid var(--box-border-color);
     width: 100%;
@@ -59,7 +58,6 @@
       bottom: -25px;
       background-color: var(--title-tool-tip-background-color);
       border-radius: 1px;
-      box-shadow: var(--title-tool-tip-shadow);
     }
 
     .branch-name {
@@ -90,7 +88,6 @@
     z-index: -1;
     left: 7px;
     top: 5px;
-    box-shadow: 1px 1px 1px 1px var(--box-border-color);
   }
 }
 

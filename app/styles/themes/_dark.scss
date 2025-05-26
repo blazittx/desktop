@@ -23,7 +23,8 @@ body.theme-dark {
   --text-color: #{$gray-100};
   --text-secondary-color: #{$gray-400};
   --text-secondary-color-muted: #{darken($gray-500, 10%)};
-  --background-color: #{$gray-900};
+  --background-color: #{transparent};
+  --ui-z-index: 1;
 
   --button-background: #{$blue};
   --button-hover-background: #{lighten($blue, 5%)};
@@ -34,12 +35,11 @@ body.theme-dark {
   --link-button-hover-color: #{lighten($link-color, 3%)};
   --link-button-selected-hover-color: #{$link-color};
 
-  --secondary-button-background: #{$gray-800};
+  --secondary-button-background: #{rgba($gray-800, 0.85)};
   --secondary-button-border-color: var(--box-border-contrast-color);
   --secondary-button-hover-border-color: #{$gray-300};
   --secondary-button-hover-background: var(--secondary-button-background);
   --secondary-button-text-color: var(--text-color);
-  --secondary-button-focus-shadow-color: #{rgba($gray-200, 0.75)};
   --secondary-button-focus-border-color: #{$gray-300};
 
   /**
@@ -80,8 +80,8 @@ body.theme-dark {
   // or an item in a tab control header. It's up to each implementation
   // to decide what states to support (active selection, selection, etc).
 
-  --box-background-color: #{darken($gray-900, 3%)};
-  --box-alt-background-color: #{lighten($gray-900, 3%)};
+  --box-background-color: #{transparent};
+  --box-alt-background-color: #{transparent};
 
   /**
    * Background color for skeleton or "loading" boxes
@@ -96,7 +96,7 @@ body.theme-dark {
 
   // slightly lighter of gray-500 to get 3:1 contrast ratio against
   // --box-alt-background-color
-  --box-border-contrast-color: #{lighten($gray-500, 3%)};
+  --box-border-contrast-color: #242424;
   --box-border-accent-color: #{$blue};
 
   /**
@@ -150,18 +150,12 @@ body.theme-dark {
    * for use when content can be expanded through other means than
    * scrolling.
    */
-  --box-overflow-shadow-background: #{linear-gradient(180deg, rgba($gray-900, 0) 0%, rgba($gray-900, 1) 90%, rgba($gray-900, 1) 100%)};
 
   /**
    * Gradient used to indicate that content is overflowing, intended
    * for use when content can be expanded through other means than
    * scrolling. Used in conjuction with background-size, background-attachment, background-repeat.
    */
-  --no-shadow-top: #{linear-gradient($gray-900, rgba(255, 255, 255, 0))};
-  --no-shadow-bottom: #{linear-gradient(rgba(255, 255, 255, 0), $gray-900)};
-  --top-shadow: #{linear-gradient(0deg, rgba($gray-900, 0) 0%, rgba(black, 0.6) 90%, rgba(black, 1) 100%)};
-  --bottom-shadow: #{linear-gradient(180deg, rgba($gray-900, 0) 0%, rgba(black, 0.6) 90%, rgba(black, 1) 100%) 0 100%};
-  --box-overflow-shadow-background-two: #{var(--no-shadow-top), var(--no-shadow-bottom) 0 100%, var(--top-shadow), var(--bottom-shadow)};
 
   /**
    * Placeholder color for input boxes
@@ -183,10 +177,7 @@ body.theme-dark {
   --base-border: 1px solid var(--box-border-color);
   --contrast-border: 1px solid var(--box-border-contrast-color);
 
-  --shadow-color: #{rgba(black, 0.5)};
-  --base-box-shadow: 0 2px 7px var(--shadow-color);
-
-  --toolbar-background-color: #{darken($gray-900, 3%)};
+  --toolbar-background-color: #{rgba(darken($gray-900, 3%), 0.85)};
   --toolbar-border-color: var(--box-border-color);
   --toolbar-text-color: var(--text-color);
   --toolbar-text-secondary-color: var(--text-secondary-color);
@@ -214,7 +205,6 @@ body.theme-dark {
   --toolbar-dropdown-text-hover-color: #{$white};
 
   --toolbar-tooltip-background-color: #{$gray-800};
-  --toolbar-tooltip-shadow-color: black;
 
   /**
     * App menu bar colors (Windows/Linux only)
@@ -274,7 +264,6 @@ body.theme-dark {
   /**
    * Variables for form elements
    */
-  --text-field-focus-shadow-color: #{rgba($blue, 0.25)};
 
   /**
    * Blankslate actions, see `BlankslateAction` component.
@@ -290,49 +279,49 @@ body.theme-dark {
   --diff-text-color: var(--text-color);
   --diff-border-color: #{$gray-800};
   --diff-gutter-color: #{$gray-800};
-  --diff-gutter-background-color: #{darken($gray-900, 3%)};
+  --diff-gutter-background-color: #{transparentize($gray-900, 0.5)};
 
   --diff-line-number-color: var(--text-secondary-color);
   --diff-line-number-column-width: 50px;
 
-  --diff-selected-background-color: #{$blue-700};
-  --diff-selected-border-color: #{$blue-600};
-  --diff-selected-gutter-color: #{$blue-600};
+  --diff-selected-background-color: #{transparentize($blue-900, 0.5)};
+  --diff-selected-border-color: #{transparentize($blue-900, 0.5)};
+  --diff-selected-gutter-color: #{transparentize($blue-900, 0.5)};
   --diff-selected-text-color: var(--text-color);
 
-  --diff-add-background-color: #{darken($green-900, 3%)};
-  --diff-add-border-color: #{darken($green-900, 2%)};
-  --diff-add-gutter-color: #{darken($green-900, 2%)};
-  --diff-add-gutter-background-color: #{darken($green-900, 8%)};
-  --diff-add-inner-background-color: #{$green-600};
+  --diff-add-background-color: #{transparentize($purple-900, 0.5)};
+  --diff-add-border-color: #{transparentize($purple-900, 0.5)};
+  --diff-add-gutter-color: #{transparentize($purple-900, 0.5)};
+  --diff-add-gutter-background-color: #{transparentize($purple-900, 0.5)};
+  --diff-add-inner-background-color: #{transparentize($purple-900, 0.5)};
   --diff-add-text-color: var(--diff-text-color);
 
-  --diff-delete-background-color: #{darken($red-900, 15%)};
-  --diff-delete-border-color: #{darken($red-900, 10%)};
-  --diff-delete-gutter-color: #{darken($red-900, 10%)};
-  --diff-delete-gutter-background-color: #{darken($red-900, 20%)};
+  --diff-delete-background-color: #{transparentize($red-900, 0.5)};
+  --diff-delete-border-color: #{transparentize($red-900, 0.5)};
+  --diff-delete-gutter-color: #{transparentize($red-900, 0.5)};
+  --diff-delete-gutter-background-color: #{transparentize($red-900, 0.5)};
   --diff-delete-inner-background-color: #{$red-700};
   --diff-delete-text-color: #{$red-100};
 
-  --diff-hunk-background-color: #{darken($gray-900, 3%)};
-  --diff-hunk-border-color: #{lighten($gray-900, 3%)};
-  --diff-hunk-gutter-color: #{lighten($gray-900, 3%)};
-  --diff-hunk-gutter-background-color: #{darken($gray-900, 6%)};
+  --diff-hunk-background-color: #{transparentize($gray-900, 0.5)};
+  --diff-hunk-border-color: #{transparentize($gray-900, 0.5)};
+  --diff-hunk-gutter-color: #{transparentize($gray-900, 0.5)};
+  --diff-hunk-gutter-background-color: #{transparentize($gray-900, 0.5)};
   --diff-hunk-text-color: var(--text-secondary-color);
 
-  --diff-hover-background-color: #{$blue-500};
-  --diff-hover-border-color: #{$blue-400};
-  --diff-hover-gutter-color: #{$blue-400};
+  --diff-hover-background-color: #{transparentize($blue-900, 0.5)};
+  --diff-hover-border-color: #{transparentize($blue-900, 0.5)};
+  --diff-hover-gutter-color: #{transparentize($blue-900, 0.5)};
   --diff-hover-text-color: var(--diff-text-color);
 
-  --diff-add-hover-background-color: #{$green-900};
-  --diff-add-hover-border-color: #{$green-700};
-  --diff-add-hover-gutter-color: #{$green-700};
+  --diff-add-hover-background-color: #{transparentize($green-900, 0.5)};
+  --diff-add-hover-border-color: #{transparentize($green-900, 0.5)};
+  --diff-add-hover-gutter-color: #{transparentize($green-900, 0.5)};
   --diff-add-hover-text-color: var(--text-color);
 
-  --diff-delete-hover-background-color: #{$red-800};
-  --diff-delete-hover-border-color: #{$red-700};
-  --diff-delete-hover-gutter-color: #{$red-700};
+  --diff-delete-hover-background-color: #{transparentize($red-900, 0.5)};
+  --diff-delete-hover-border-color: #{transparentize($red-900, 0.5)};
+  --diff-delete-hover-gutter-color: #{transparentize($red-900, 0.5)};
   --diff-delete-hover-text-color: var(--text-color);
 
   --diff-empty-row-background-color: #{darken($gray-900, 1%)};
@@ -390,7 +379,6 @@ body.theme-dark {
   /** Tooltips */
   --tooltip-background-color: #{$gray-800};
   --tooltip-color: #{$gray-100};
-  --tooltip-shadow-color: #{$black};
 
   /** Inline paths and code */
   --path-segment-background: #{$gray-700};
@@ -420,7 +408,6 @@ body.theme-dark {
   --call-to-action-bubble-color: #{$white};
 
   --title-tool-tip-background-color: rgb(56, 58, 62);
-  --title-tool-tip-shadow: none;
 
   // Markdown colors
   --md-border-default-color: #30363d;
@@ -433,6 +420,153 @@ body.theme-dark {
   --md-neutral-muted-color: rgba(110, 118, 129, 0.4);
   --md-accent-emphasis-color: #1f6feb;
   --md-accent-fg-color: #58a6ff;
+
+  // List item styles
+  .list-item {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: transparent;
+
+    &.selected {
+      background-color: rgba(36, 41, 46, 0.7);
+    }
+
+    &:hover {
+      background-color: rgba(36, 41, 46, 0.6);
+    }
+  }
+
+  .toolbar-button {
+    border: none;
+  }
+
+  // Grid container styles
+  .ReactVirtualized__Grid {
+    background-color: transparent;
+  }
+
+  .ReactVirtualized__Grid__innerScrollContainer {
+    background-color: transparent;
+  }
+
+  .filter-field-row {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid #242424;
+  }
+
+  .tab-bar-item {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .stashed-changes-button {
+    background-color: transparent;
+    border-top: 1px solid #242424;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .commit-message-component {
+    background-color: transparent;
+    border-top: 1px solid #242424;
+  }
+
+  .push-pull-button {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 100% !important;
+  }
+
+  .resizable-component {
+    &:has(.push-pull-button) {
+      width: 100% !important;
+      max-width: none !important;
+      min-width: 100% !important;
+    }
+  }
+
+  .ReactVirtualized__Grid {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .ReactVirtualized__Grid__innerScrollContainer {
+    background-color: transparent;
+  }
+
+  .header {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  #desktop-app-title-bar {
+    height: 48px !important;
+    background-color: #000000 !important;
+    opacity: 1 !important;
+  }
+
+  .compare-form {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  #desktop-app-toolbar {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid #242424;
+    border-top: 1px solid #242424;
+  }
+
+  #repository {
+    border: none;
+  }
+
+  .tab-bar {
+    border-bottom: 1px solid #242424;
+  }
+
+  .tab-bar-item {
+    border-right: 1px solid #242424 !important;
+  }
+
+  .description-focus-container {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .text-area-component {
+    background-color: transparent;
+    background: none;
+  }
+
+  .copilot-button {
+    height: fit-content !important;
+  }
+
+  #__autocompleting-text-input {
+    background-color: transparent;
+    background: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .file-list {
+    background-color: transparent;
+  }
+
+  #expandable-commit-summary {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
 }
 
 // this emulates the cursor for the co-author input because it isn't exactly

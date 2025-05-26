@@ -4,6 +4,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as Path from 'path'
 import { App } from './app'
+import { BackgroundAnimation } from './background/BackgroundAnimation'
 import {
   Dispatcher,
   externalEditorErrorHandler,
@@ -414,15 +415,18 @@ ipcRenderer.on('cli-action', (_, action) =>
 })(Grid.defaultProps, Grid.propTypes)
 
 ReactDOM.render(
-  <App
-    dispatcher={dispatcher}
-    appStore={appStore}
-    repositoryStateManager={repositoryStateManager}
-    issuesStore={issuesStore}
-    gitHubUserStore={gitHubUserStore}
-    aheadBehindStore={aheadBehindStore}
-    notificationsDebugStore={notificationsDebugStore}
-    startTime={startTime}
-  />,
+  <>
+    <BackgroundAnimation />
+    <App
+      dispatcher={dispatcher}
+      appStore={appStore}
+      repositoryStateManager={repositoryStateManager}
+      issuesStore={issuesStore}
+      gitHubUserStore={gitHubUserStore}
+      aheadBehindStore={aheadBehindStore}
+      notificationsDebugStore={notificationsDebugStore}
+      startTime={startTime}
+    />
+  </>,
   document.getElementById('desktop-app-container')!
 )
